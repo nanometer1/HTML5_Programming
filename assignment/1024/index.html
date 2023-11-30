@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px; padding:0px;}
+        body{background-image:url("image/bgs.png");}
+        #right_menu{
+            list-style: none;
+            position:absolute;
+            left:92vw;
+            top:30vh;
+        }
+        #right_menu li{
+            width:100px;
+            height:30px;
+            line-height: 30px;
+            background-color: rgb(139, 241, 114);
+            text-align: center;
+            margin-bottom:10px;
+        }
+        #container{
+            width: 80vw;
+            margin: 0 auto;
+            height: 70vw;
+            background-color:white;
+        }
+        #banner{
+            width: 80vw;
+            background-color: lightblue;
+            height: 5vw;
+        }
+        #content{
+            width: 80vw;
+            height: 20vw;
+            background-color: rgb(237, 237, 237);
+        }
+        #content{
+            width:80vw;
+            height:20vw;
+            display: flex;
+        }
+        #left{
+            width:35.8065vw;
+            height:20vw;
+            background-color: lightgray;
+        }
+        #right{
+            width:44.1935vw;
+            height:20vw;
+            background-image:url("image/bg.png");
+            background-size: 100%;
+            display: flex;
+            align-items: end;
+        }
+        #menu{
+            width:44.1935vw;
+            height:2vw;
+            background-color: rgba(255, 0, 0, 0.4);
+        }
+        #menu ul{
+            list-style:none;
+            display: flex;
+            justify-content: end;
+            margin-right:2vw;
+        }
+        #menu ul li{
+            width:1vw;
+            height:1vw;
+            margin:0.5vw 0.5vw;
+        }
+        .block{
+            width:1vw;
+            height:1vw;
+            line-height: 1vw;
+            text-align: center;
+            background-color: rgba(250, 235, 215, 0.5);
+        }
+        .block:hover{
+            text-decoration:none;
+            background-color:cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <ul id="right_menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+    <div id="container">
+        <div id="banner">banner</div>
+        <div id="content">
+            <div id="left">left</div>
+            <div id="right">
+                <div id="menu">
+                    <ul>
+                        <li><div class="block" onclick="location.href='#';">1</div></li>
+                        <li><div class="block" onclick="location.href='#';">2</div></li>
+                        <li><div class="block" onclick="location.href='#';">3</div></li>
+                        <li><div class="block" onclick="location.href='#';">4</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
