@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <button id="btn">按钮</button>
+     </div>
+</body>
+<script type="text/javascript">
+    document.getElementById("btn").addEventListener("click",inner);
+    document.getElementById("div").addEventListener("click",container);
+    function inner(event){
+        console.log("inner");
+        console.log(event.clientX);
+        console.log(event.screenX);
+        //event.stopPropagation();
+    }
+    function container(){
+        console.log("container");
+        alert(event.target.innerHTML);
+        alert(event.currentTarget.innerHTML);
+    }
+
+
+</script>
+</html>
