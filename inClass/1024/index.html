@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,p,div,ul,li{margin: 0px; padding:0px;}
+        body{
+            background-image:url("image/bgs.png");
+        }
+        #top{list-style: none;position: fixed;width:100%;height:30px;background-color: darkblue;}
+        #right_menu{
+            list-style: none;
+            position:absolute;
+            left:90%;
+            top:200px;
+        }
+        #right_menu li{
+            width:100px;
+            height:30px;
+            line-height: 30px;
+            background-color: chocolate;
+            text-align: center;
+            margin-bottom:10px;
+        }
+        #container{
+            width: 80%;
+            margin: 0 auto;
+            height: 500px;
+            background-color: red;
+        }
+        #banner{
+            width: 100%; 
+            background-color: lightblue;
+            text-align: center;
+            font-size: 50px;
+            height: 100px;
+            line-height: 100px;
+        }
+        #menu{
+            width: 100%;
+            height: 30px;
+            background-color: rgb(68, 112, 127);
+        }
+        #bgDiv{
+            width:100%;
+            height:378px;
+            background-color: cadetblue;
+            background-image:url("image/hz.jpg");
+            background-size:100% 100%;
+        }
+        #bgDiv ul{
+            list-style:none;
+            width:100%;
+            height:80px;
+            background-color:rgba(0,0,0,0.5);
+            
+            position:relative;
+            top:298px;
+        }
+        #bgDiv ul li{
+            width:40px;
+            height:40px;
+            line-height:40px;
+            text-align: center;            
+            color:white;
+            background-color: black;
+            float:right;
+            border:1px solid white;
+            margin:20px 5px;
+        }
+        #bgDiv ul li:hover{background-color: white;color:black;}
+        #bgDiv ul li:nth-child(1){margin-right:30px;}
+        #content{
+            width: 100%;
+            height: 300px;
+            background-color: rgb(237, 237, 237);
+        }
+        #footer{
+            width: 100%;
+            height: 80px;
+            background-color: lightblue;
+        }
+        #menu ul{
+            list-style: none;
+        }
+        #menu ul li{   
+            float: left;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+        }
+        #menu ul li a{
+            text-decoration: none;
+            color:yellow;
+        }
+        #menu ul li a:hover{
+            color: white;
+        }
+        #menu ul li:nth-child(1){
+            width:50%;
+        }
+        #content div{
+            background-color: red;
+            width:200px;
+            height:100%;
+            float:left;
+        }
+        #content #left{
+            width:30%;
+            background-color: lightgray;
+        }
+        #content #right{
+            width:70%;
+            background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul id="top"></ul>
+    <ul id="right_menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+    <div id="container">
+        <div id="banner">banner</div>
+        <div id="menu">
+            <ul>
+                <li></li>
+                <li><a href="#">校园简介</a></li>
+                <li><a href="#">专业介绍</a></li>
+                <li><a href="#">校园风光</a></li>
+                <li><a href="#">招生就业</a></li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="bgDiv">
+            <ul>
+                <li>4</li>
+                <li>3</li>
+                <li>2</li>
+                <li>1</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="left">left</div>
+            <div id="right">right</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>

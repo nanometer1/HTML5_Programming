@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,p,div,ul,li{margin:0px;padding:0px;}
+        #banner{
+            width:685px;
+            height:310px;
+            background-image:url("image/bg.png");
+            background-repeat: no-repeat;
+        }
+        #menu{
+            position:absolute;
+            top:280px;
+            width:685px;
+            height:30px;
+            background-color: rgba(255, 0, 0, 0.4);
+        }
+        #menu ul{
+            list-style:none;
+            position:absolute;
+            left:550px;
+        }
+        #menu ul li{
+            float:left;
+            width:21px;
+            margin:4.5px;
+            margin-right:7px;
+            text-align: center;
+        }
+        .block{
+            background-color: rgba(250, 235, 215, 0.5);
+        }
+        .block:hover{
+            text-decoration:none;
+            background-color:cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div id="menu">
+            <ul>
+                <li><div class="block" onclick="location.href='#';">1</div></li>
+                <li><div class="block" onclick="location.href='#';">2</div></li>
+                <li><div class="block" onclick="location.href='#';">3</div></li>
+                <li><div class="block" onclick="location.href='#';">4</div></li>
+            </ul>
+        </div>    
+    </div>
+</body>
+</html>
