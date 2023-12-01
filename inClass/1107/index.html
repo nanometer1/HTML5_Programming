@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var initNumV=0;
+        console.log(initNumV);
+        function caluV(){
+            var initNumV=0;
+            initNumV++;
+            console.log(initNumV);
+        }
+        caluV();
+        console.log(initNumV);
+        
+
+        var genderNum =1;
+        
+        if (genderNum==1){
+            gender="Male";
+        }else{
+            gender="Female";
+        }
+        console.log(gender);
+
+        var mydate= new Date();
+        var day=mydate.getDay();
+        console.log(day);
+        var xq;
+        switch(day){
+            case 0:
+                xq="sunday";
+                break;
+            case 1:
+                xq="monday";
+                break;
+            case 2:
+                xq="tuesday";
+                break;
+            case 3:
+                xq="wednesday";
+                break;
+            case 4:
+                xq="thu";
+                break;
+            case 5:
+                xq="fri";
+                break;
+            case 6:
+                xq="sat";
+                break;
+        }    
+        console.log(xq);
+
+        //三目运算符
+        gender=genderNum==1?"Male":"Female";
+        console.log(gender);
+
+        //数组
+        var arr=["001","002","003"];
+        for (let i=0;i<arr.length;++i){   //普通for
+            console.log(arr[i]);
+        }
+
+        //for in
+        var person={no:"001",name:"tom",age:62};
+        var text="";
+        var x;
+        for (x in person){
+            text+=person[x];
+        }
+        console.log(text);
+
+        //传统函数
+        function multiply(num1,num2){
+            var total=num1*num2;
+            return total;
+        }
+        var result=multiply(5,9);
+        console.log(result);
+
+        //函数 =>
+        let resultArr =(num1,num2)=>num1*num2;
+        console.log(resultArr(2,3));
+
+
+        //
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
