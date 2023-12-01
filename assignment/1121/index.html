@@ -1,1 +1,74 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="menuTop">
+            <ul id="topLeft">
+                <li class="group">社区</li>
+                <li class="group">助手</li>
+                <li class="group">动态</li>
+                <li>云服务</li>
+            </ul>
+            <ul id="topRight">
+                <li class="group" onclick=fun_search()>搜索</li>
+                <li class="group" onclick=fun_signIn()>登录</li>
+                <li>注册</li>
+            </ul>
+        </div>
+        <div id="menu">
+            <div id="logo">Logo</div>
+            <div id="mainMenu">
+                <ul>
+                    <li>首页</li>
+                    <li>产品</li>
+                    <li>品牌</li>
+                    <li>在线商城</li>
+                    <li>体验店</li>
+                    <li>服务</li>
+                </ul>
+            </div>
+        </div>
+        <div id="search">
+            <div id="search_box">
+                <div id="search_em1"></div>
+                <div id="search_em2"><p>搜索</p></div>
+            </div>
+        </div>
+        <div id="banner">
+            <div id="par1">发现生活的趣味和美好</div>
+            <div id="par2">旅途中、生活中，手机帮你记录一个个精彩的画面。感谢你的分享，<br>在这里，你看到的都是手机拍摄出来的作品。</div>
+        </div>
+        <div id="content">
+            <div class="group_1">
+                <div id="p1"></div>
+                <p>社区</p>
+            </div>
+            <div class="group_2">
+                <div id="p2"></div>
+                <p>color</p>
+            </div>
+            <div class="group_1">
+                <div id="p3"></div>
+                <p>软件商店</p>
+            </div>
+            <div class="group_2">
+                <div id="p4"></div>
+                <p>品牌中心</p>
+            </div>
+        </div>
+        <div id="signIn">
+             <div id="user"><p>请输入用户名...</p></div>
+             <div id="password"><p>请输入密码...</p></div>
+             <div id="confirm"><p>确定</p></div>
+             <div id="reset"><p>重置</p></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
