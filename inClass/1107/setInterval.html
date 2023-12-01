@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var inittime = 10;
+        var havetime = 0;
+        window.setInterval(settime,1000);
+        function settime(){
+            inittime--;
+            havetime++;
+            if (inittime == 0){
+                alert("时间到！");
+                window.close();
+            }
+            document.forms[0].time.value = inittime;
+            document.forms[0].htime.value = havetime;
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        你已经停留<input type="text" name="htime" size="4">秒
+        你可以停留<input type="text" name="time" size="4">秒
+    </form>
+</body>
+</html>
