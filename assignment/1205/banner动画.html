@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		/*searchBox CSS*/
+		#searchBox{
+			width:100%;
+			height: 80px;
+			line-height: 80px;
+			border-bottom: 1px solid gray;
+			background-color: #EAE7E7;
+			position:absolute;
+			top:40px;
+			left: 0px;
+			display: none;
+			box-shadow: 0px 2px 5px #888888;
+		}
+		#searchBox input{
+			margin-top: 15px;
+			padding: 0px;
+			float: right;
+			width:300px;
+			height:50px;
+			line-height: 50px;
+			border:1px solid #CCCCCC;
+			border-radius: 2px;
+			vertical-align: middle;
+
+		}
+		#searchBox div{
+			margin-top: 15px;
+			margin-right: 50px;
+			padding: 0px;
+			float: right;
+			width:150px;
+			height:50px;
+			border:1px solid #CCCCCC;
+			background-color: #009F5A;
+			text-align: center;
+			line-height: 50px;
+			color: #fff;
+			font-family: "微软雅黑";
+		}
+
+		/*top CSS*/
+		#top{
+			width:100%;
+			background-color: #5B945B;
+			height: 35px;
+			border-bottom: 1px solid gray;
+			position: fixed;
+			top:0px;
+			left: 0px;
+		}
+		#top ul{list-style: none;height: 35px;}
+		#top ul li{
+			width:60px;
+			height: 35px;
+			line-height: 35px;
+			font-size:12px;
+			color:white;
+			float: left;
+			border-left:1px solid #C3C3C3;
+			padding: 0 10px;
+			text-align: center;
+		}
+		#top ul li:hover{background-color: #077300;}
+		#top ul:nth-child(2){float: left;}
+		/*#top ul:nth-child(2) li:first-child{margin-left: 60px;}*/
+		#top ul:nth-child(3){float: right;}
+		#top ul:nth-child(3) li:nth-child(3){margin-right: 50px;}
+		#top ul:nth-child(3) li:nth-child(1){border-left: 0px;}
+		#top li a{text-decoration: none; color: #fff;}
+
+		/*banner CSS*/
+		#banner{
+			width:100%;
+			height: 80px;
+			border-bottom: 1px solid #EFEFEF;
+			margin-top: 35px;
+		}
+		#banner div:nth-child(1){
+			font-size: 50px;
+			color:#21762B;
+			font-weight: 600;
+			font-family: "Verdana";
+			margin-left: 80px;
+			height: 80px;
+			line-height: 80px;
+			float: left;
+		}
+		#banner ul{
+			list-style: none;
+			height: 80px;
+			float: right;
+			margin-right: 30px;
+		}
+		#banner ul li{
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+			float: left;
+			font-size: 14px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+		}
+		
+		#hideMenu,#hideMenu ul{
+			display: none;
+		}
+		#hideMenu div{
+			width:50px;
+			height: 35px;
+			color:#fff;
+			line-height: 35px;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			margin-left: 20px;
+		}
+		#hideMenu ul{list-style: none; width:100px; margin-left: 10px; margin-top: 5px;}
+		#hideMenu ul li{
+			font-size: 14px;
+			font-family: "微软雅黑";
+			color: #fff;
+			width:100%;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			background-color: #009F5A;
+			border-top: 1px solid #EEE;
+		}
+		
+
+		@media screen and (max-width: 900px){
+			#top>ul,#banner>ul{
+				display: none;
+			}
+			#hideMenu{
+				display: block;
+			}
+			#hideMenu ul li:first-child{margin-left: 0px;}
+		}
+		
+		#mainImage {
+			width: 100%;
+			height: 350px;
+			background-size: 100%;
+			position: relative;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		#mainImage #imageUL {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 350px;
+			width: 1px;
+			/* width: 12930px; */
+			transition: left 1s;
+		}
+
+		#mainImage #imageUL li {
+			/* width: 800px; */
+			height: 350px;
+			overflow: hidden;
+			float: left;
+		}
+
+		#mainImage #circle{
+			list-style: none;
+			width:200px;
+			height: 30px;
+			margin: 0px auto;
+			margin-top: 100px;
+		}
+		#mainImage #circle li{
+			float: left;
+			width:12px;
+			height: 12px;
+			border-radius: 12px;
+			background-color: #ACACAC;
+			margin: 0px 10px;
+			border: 2px solid #ACACAC;
+		}
+		/* #circle li:nth-child(1){
+			border: 2px solid #006F22;
+			background-color: #fff;
+		}
+
+		#circle li:hover{
+			border: 2px solid #006F22;
+			background-color: #fff;
+		} */
+
+		#mainImage div:nth-child(1){
+			color:#fff;
+			font-family: '微软雅黑';
+			font-size: 30px;
+			font-weight: normal;
+			text-align: center;
+			padding-top: 80px;
+		}
+		#mainImage div:nth-child(2){
+			margin: 0 auto;
+			width: 500px;
+			color:#fff;
+			font-family: '微软雅黑';
+			font-size: 16px;
+			font-weight: normal;
+			text-align: center;
+			padding-top: 30px;
+		}
+		#circle,#mainImage div {
+			position: relative;
+			z-index: 2; /* 设置一个较高的 z-index 值 */
+		}
+		#imageUL {
+			position: relative;
+			z-index: 1; /* 设置一个较低的 z-index 值 */
+		}
+
+		#downMenu{margin: 20px auto;padding: 0;width: 90%;height: 100px;}
+		#downMenu ul{
+			list-style: none;
+			width: 24%;
+			height: 100px;
+			line-height: 100px;
+			float: left;
+			background-color: #009F5A;
+			margin:0 5px;
+			font-family: '微软雅黑';
+			font-size: 16px;
+			font-weight: 600;
+			color:#fff;
+		}
+		#downMenu ul:nth-child(2),#downMenu ul:nth-child(4){
+			background-color: #CFCFCF;
+			color:#222;
+		}
+		#downMenu ul li:nth-child(1){
+			float: left;
+			width:40%;
+			height: 100px;
+			text-align: center;
+		}
+		#downMenu ul li:nth-child(1) img{
+			vertical-align:middle;
+		}
+		
+		#downMenu ul li:nth-child(2){
+			float: right;
+			width:60%;
+			line-height: 100px;
+			text-align: center;
+		}
+
+		@media screen and (max-width: 1150px) {
+			#downMenu{height: 250px;}
+			#downMenu ul{
+				width:48%;
+				margin-top: 15px;
+			}
+		}
+
+		#bottom{
+			width:100%;
+			height: 80px;
+			background-color:#5B945B; 
+			line-height: 80px;
+			text-align: center;
+			color: #ddd;
+			font-size: 12px;
+		}
+
+
+		#logDiv{
+			position: absolute;
+			top:45px;
+			right:3%;
+			width:250px;
+			height: 200px;
+			background: #f6f6f6;
+			border: 1px solid #D2D2D2;
+			display: none;
+			font-family: '微软雅黑';
+			box-shadow:0px 0px 5px #D7D7D7;
+
+		}
+		#logDiv ul{width:200px;list-style: none; margin: 20px auto;}
+		#logDiv li{margin-bottom: 8px;}
+		#logDiv li input[type="text"]{
+			width:200px;
+			height: 25px;
+			border: 1px solid #DFDFDF;
+			margin: 0px auto;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			color: #ccc;
+		}
+		#logDiv li input[type="button"],#logDiv li input[type="reset"]{
+			width:200px;
+			height: 35px;
+			background: #009F5A;
+			color:white;
+			border:2px solid white;
+			font-family: '微软雅黑';
+			font-size: 14px;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="logDiv">
+		<ul>
+			<li><input type="text" id="username" value="请输入用户名..." /></li>
+			<li><input type="text" id="psd" value="请输入密码..."/></li>
+			<li><input type="button" id="btn" value="确 定" /></li>
+			<li><input type="reset" id="reset" value="重 置" /></li>
+		</ul>
+	</div>
+	<div id="searchBox">
+		<div>搜 索</div>
+		<input type="text">
+	</div>
+	<div id="top">
+		<div id="hideMenu">
+			<div id="menuBtn" onclick="showMenuBtn()">MENU</div>
+			<ul id="innerMenu">
+				<li>首页</li>
+				<li>产品</li>
+				<li>品牌</li>
+				<li>在线商城</li>
+				<li>体验店</li>
+				<li>服务</li>
+				<li>社区</li>
+				<li>助手</li>
+				<li>动态</li>
+				<li>云服务</li>
+				<li onclick="showSearchBox()">搜索</li>
+				<li><a href="#" onclick="showLogin()">登录</a></li>
+				<li>注册</li>
+			</ul>
+		</div>
+		<ul>
+			<li>社区</li>
+			<li>助手</li>
+			<li>动态</li>
+			<li>云服务</li>
+		</ul>
+		<ul>
+			<li id="searchMenu" onclick="showSearchBox()">搜索</li>
+			<li id="loginMenu" onclick="showLogin()">登录</li>
+			<li id="register">注册</li>
+		</ul>
+	</div>
+	<div id="banner">
+		<div id="logo">Logo</div>
+		<ul>
+			<li>首页</li>
+			<li>产品</li>
+			<li>品牌</li>
+			<li>在线商城</li>
+			<li>体验店</li>
+			<li>服务</li>
+		</ul>
+	</div>
+
+	<div id="mainImage">
+		<div>发现生活的趣味和美好</div>
+		<div>旅途中、生活中，vivo手机帮助您记录一个个精彩画面。
+感谢您的分享，在这里，您看到的都是vivo手机拍摄的作品。</div>
+		<ul id="imageUL">
+			<li><img /></li>
+			<li><img /></li>
+			<li><img /></li>
+			<li><img /></li>
+		</ul>
+		<ul id="circle">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div id="downMenu">
+		<ul>
+			<li><img src="image/p1.png"></li>
+			<li>
+				社区
+			</li>
+		</ul>
+		<ul>
+			<li><img src="image/p2.png"></li>
+			<li>
+				Color
+			</li>
+		</ul>
+		<ul>
+			<li><img src="image/p3.png"></li>
+			<li>
+				软件商店
+			</li>
+		</ul>
+		<ul>
+			<li><img src="image/p4.png"></li>
+			<li>
+				品牌中心
+			</li>
+		</ul>
+	</div>
+
+	<div id="bottom">©2005-2016 XX市XXXX科技有限公司 版权所有 X ICP备00000000号-1</div>
+</body>
+<script type="text/javascript">
+	function showSearchBox(){
+		var t=document.getElementById("searchBox");
+		if (t.style.display=="none"){
+			t.style.display="block";
+		}else{ 
+			t.style.display="none";
+		}
+	}
+	function showLogin(){
+		var t=document.getElementById("logDiv");
+		if (t.style.display=="none"){
+			t.style.display="block";
+		}else{
+			t.style.display="none";
+		}
+	}
+	function showMenuBtn(){
+		var t=document.getElementById("innerMenu");
+		if (t.style.display=="none"){
+			t.style.display="block";
+		}else{
+			t.style.display="none";
+		}
+	}
+	
+	var myarray=["image/pic1.jpg", "image/pic2.jpg", "image/pic3.jpg", "image/pic4.jpg"];
+	var imageLi=document.getElementById("imageUL").getElementsByTagName("li");
+	var screenWidth=document.body.clientWidth;
+	alert(screenWidth);
+	document.getElementById("imageUL").style.width=screenWidth*imageLi.length+"px";
+	for (var i=0;i<imageLi.length;++i){
+		imageLi[i].style.width=screenWidth+"px";
+		imageLi[i].getElementsByTagName("img")[0].style.width="100%";
+		imageLi[i].getElementsByTagName("img")[0].src=myarray[i];
+	}
+	var now=0,last=imageLi.length,cnt=1;
+	var timerImage=window.setInterval("setBGimage()",2000);
+	function setBGimage(){
+		last=now;
+		now=(now+1)%imageLi.length;
+		document.getElementById("imageUL").style.left=-now*screenWidth+"px";
+		setCircleStyle();
+	}
+	var circleLi=document.getElementById("circle").getElementsByTagName("li");
+	circleLi[0].style.borderColor="#006F22";
+	circleLi[0].style.backgroundColor="#fff";
+
+	//单击圆时的变化
+	for (var i=0;i<circleLi.length;++i){
+		circleLi[i].onmouseover=function(){
+			
+			this.style.borderColor="#006F22";
+			this.style.backgroundColor="#fff";
+		}
+		circleLi[i].onmouseout=function(){
+			if (cnt==1)return;
+			this.style.borderColor="#ACACAC";
+			this.style.backgroundColor="#ACACAC";			
+		}
+		circleLi[i].index=i;
+		circleLi[i].onclick=function(){
+			window.clearInterval(timerImage);
+			document.getElementById("imageUL").style.left=-this.index*screenWidth+"px";
+			last=now;
+			now=this.index;
+			timerImage=window.setInterval("setBGimage()",2000);
+			setCircleStyle();
+		}
+	}
+
+	//banner中圆形的变化
+	function setCircleStyle(){
+		for (var i=0;i<circleLi.length;++i){}
+		document.getElementById("circle").getElementsByTagName("li")[last].style.borderColor="#ACACAC";
+		document.getElementById("circle").getElementsByTagName("li")[last].style.backgroundColor="#ACACAC";
+		document.getElementById("circle").getElementsByTagName("li")[now].style.borderColor="#006F22";
+		document.getElementById("circle").getElementsByTagName("li")[now].style.backgroundColor="#fff";
+	}
+</script>
+</html>
