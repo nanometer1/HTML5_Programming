@@ -453,7 +453,7 @@
 		imageLi[i].getElementsByTagName("img")[0].style.width="100%";
 		imageLi[i].getElementsByTagName("img")[0].src=myarray[i];
 	}
-	var now=0,last=imageLi.length,cnt=1;
+	var now=0,last=imageLi.length;
 	var timerImage=window.setInterval("setBGimage()",2000);
 	function setBGimage(){
 		last=now;
@@ -467,17 +467,17 @@
 
 	//单击圆时的变化
 	for (var i=0;i<circleLi.length;++i){
+		circleLi[i].index=i;
 		circleLi[i].onmouseover=function(){
-			
 			this.style.borderColor="#006F22";
 			this.style.backgroundColor="#fff";
 		}
 		circleLi[i].onmouseout=function(){
-			if (cnt==1)return;
+			if (this.index==now)return;
 			this.style.borderColor="#ACACAC";
-			this.style.backgroundColor="#ACACAC";			
+			this.style.backgroundColor="#ACACAC";
 		}
-		circleLi[i].index=i;
+		
 		circleLi[i].onclick=function(){
 			window.clearInterval(timerImage);
 			document.getElementById("imageUL").style.left=-this.index*screenWidth+"px";
