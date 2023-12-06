@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #menu{
+            margin:50px auto;
+            width:950px;
+            height:50px;
+            background-color:#333333;
+        }
+        ul{
+            list-style:none;
+            font-size:12px;
+            color:#FFFFFF;
+            margin:0;
+            padding:0;
+            line-height:50px;
+        }
+        li{
+            float:left;
+            padding:0 20px;
+            border-right:1px solid #444;
+        }
+    </style>
+    <script  type="text/javascript">
+        window.onload=init;
+        function init(){
+            var newLi=document.getElementsByTagName("li");
+            for (var i=0;i<newLi.length;++i){
+                newLi[i].onmouseover=function(){
+                    this.style.backgroundColor="green";
+                }
+                newLi[i].onmouseout=function(){
+                    this.style.backgroundColor="";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="menu">
+		<ul>
+	    	<li>首   页</li>
+	        <li>公司简介</li>
+	        <li>产品介绍</li>
+	        <li>技术开发</li>
+	        <li>人才招聘</li>
+	        <li>联系我们</li>
+	    </ul>
+	</div>
+</body>
+</html>

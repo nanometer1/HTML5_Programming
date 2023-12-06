@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+		#container {
+			margin: 0px auto;
+			width: 950px;
+		}
+
+		#menu {
+			width: 950px;
+			height: 50px;
+			background-color: #333333;
+			position: relative;
+		}
+
+		ul {
+			list-style: none;
+			font-size: 12px;
+			color: #FFFFFF;
+			margin: 0;
+			padding: 0;
+			line-height: 50px;
+		}
+
+		.liLevel1 {
+			float: left;
+			padding: 0 20px;
+			border-right: 1px solid #444;
+		}
+
+		#productInfo {
+			position: absolute;
+			top: 50px;
+			left: 160px;
+			background-color: #333333;
+			width: 150px;
+			text-align: center;
+			display: none;
+			z-index: 0;
+		}
+
+		.liLevel2 {
+			border-top: 1px solid #666;
+		}
+
+
+		a:link,
+		a:active,
+		a:visited {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		a:hover {
+			text-decoration: none;
+			color: #00F;
+		}
+
+		#head {
+			margin: 5px auto;
+			width: 950px;
+			height: 150px;
+			background-color: #ddd;
+		}
+
+		#main {
+			width: 950px;
+			height: 350px;
+			background-color: #ddd;
+			z-index: -1;
+		}
+	</style>
+    <script  type="text/javascript">
+        window.onload=init;
+        function init(){
+            var newLi=document.getElementsByName("level1");
+            for (var i=0;i<newLi.length;++i){
+                newLi[i].onmouseover=function(){
+                    this.style.backgroundColor="green";
+                }
+                newLi[i].onmouseout=function(){
+                    this.style.backgroundColor="";
+                }
+            }
+            var newLiInner=document.getElementsByName("level2");
+            for (var i=0;i<newLiInner.length;++i){
+                newLiInner[i].onmouseover=function(){
+                    this.style.backgroundColor="orange";
+                }
+                newLiInner[i].onmouseout=function(){
+                    this.style.backgroundColor="";
+                }
+            }
+            var product=document.getElementById("productInfoLi");
+            var productInfo=document.getElementById("productInfo");
+            product.onmouseover=function(){
+                productInfo.style.display="block";
+                this.style.backgroundColor="green";
+            }
+            product.onmouseout=function(){
+                productInfo.style.display="none";
+                this.style.backgroundColor="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <div id="container">
+            <div id="head"></div>
+            <div id="menu">
+                <ul>
+                    <li class="liLevel1" name="level1">首 页</li>
+                    <li class="liLevel1" name="level1">公司简介</li>
+                    <li class="liLevel1" name="level1" id="productInfoLi">产品介绍
+                        <ul id="productInfo">
+                            <li class="liLevel2" name="level2"><a href="#">前端开发</a></li>
+                            <li class="liLevel2" name="level2"><a href="#">交互设计</a></li>
+                            <li class="liLevel2" name="level2"><a href="#">动画制作</a></li>
+                            <li class="liLevel2" name="level2"><a href="#">影视制作</a></li>
+                        </ul>
+                    </li>
+                    <li class="liLevel1" name="level1">技术开发</li>
+                    <li class="liLevel1" name="level1">人才招聘</li>
+                    <li class="liLevel1" name="level1">联系我们</li>
+                </ul>
+            </div>
+            <div id="main"></div>
+        </div>
+    </body>
+    
+</body>
+</html>
