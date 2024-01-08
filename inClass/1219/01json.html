@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = init;
+        function init() {
+            var JSONObject = {
+                "name": "ZUST",
+                "street": "杭州市留和路318号",
+                "age": 30,
+                "phone": "0571-88888888"
+            };
+            document.getElementById("jname").innerHTML = JSONObject.name;
+            document.getElementById("jage").innerHTML = JSONObject.age;
+            document.getElementById("jstreet").innerHTML = JSONObject.street;
+            document.getElementById("jphone").innerHTML = JSONObject.phone;
+        }
+    </script>
+</head>
+<body>
+    <p>
+        Name: <span id="jname"></span><br />
+        Age: <span id="jage"></span><br />
+        Address: <span id="jstreet"></span><br />
+        Phone: <span id="jphone"></span><br />
+    </p>
+
+</body>
+</html>

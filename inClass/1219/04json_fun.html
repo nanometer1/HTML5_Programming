@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = init;
+        function init() {
+            var ZKD =
+            {
+                URL: "www.zust.edu.cn",
+                name: "浙江科技大学",
+                englishname: "ZHEJIANG University of Science & Technology",
+                address: "杭州市西湖区留和路318号",
+                Zipcode: 310023,
+                startdate: new Date(1980, 1),
+                //---------------------------------------
+                say: function () {
+                    document.getElementById("welcome").innerHTML = this.name + " say : Welcome to ZKD!" + "<BR/>"
+                },
+                age: function () {
+                    document.getElementById("age").innerHTML = this.name + "已经" + ((new Date().getFullYear()) - this.startdate.getFullYear()) + "岁了!" + "<BR/>"
+                }
+            };
+            ZKD.say();
+            ZKD.age();
+        }
+    </script>
+</head>
+<body>
+    <p id="welcome"> </p>
+    <p id="age"> </p>
+</body>
+</html>
