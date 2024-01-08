@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>上衣</li>
+            <li>毛衣</li>
+            <li>皮衣</li>
+            <li>羽绒服</li>
+            <li>夹克</li>
+        </ul>
+    </div>
+    <div id="inputMenu">
+        <input type="text" id="txt" />
+        <input type="button" value="插入菜单" id="btn" />
+    </div>
+</body>
+<script type="text/javascript">
+    var btn=document.getElementById("btn");
+    var txt=document.getElementById("txt");
+    btn.onclick=function(){
+        var newLi=document.createElement("li");
+        var newText=document.createTextNode(txt.value)
+        var newA=document.createElement("a");
+        newA.setAttribute("href","http://www.163.com");
+        newA.appendChild(newText);
+        newLi.appendChild(newA);
+        document.getElementsByTagName("ul")[0].appendChild(newLi);
+        txt.value="";
+    }
+    
+</script>
+</html>

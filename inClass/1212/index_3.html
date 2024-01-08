@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+		<textarea id="txt" rows="5" cols="30" name="txt"></textarea>
+		<br /><br />
+		<label><input type="radio" name="nodeAction" />Add Node</label>
+		<label><input type="radio" name="nodeAction" />Delete Node</label>
+		<label><input type="radio" name="nodeAction" />Insert Node</label>
+		<label><input type="radio" name="nodeAction" />Replace Node</label>
+		<br /><br />
+		Select NO:<select id="grafCount"></select>
+		<br /><br />
+		<input type="submit" id="btn" value="submit" />
+	</form><br />
+	<div id="modifiable"></div>
+</body>
+<script type="text/javascript">
+    var nodeChgDiv=document.getElementById("modifiable");
+    var nodeChgDivP=nodeChgDiv.getElementsByTagName("p");
+    var graf=document.getElementById("grafCount");
+    document.getElementsByTagName("form")[0].onsubmit=nodeChanger;
+    function nodeChanger(){
+        var selectNum=-1;
+        var nodeAction=document.getElementsByName("nodeAction");
+        for (var i=0;i<nodeAction.length;++i){
+            if (nodeAction[i].checked){
+                selectNum=i;
+                break;
+            }
+        }
+        switch(selectNum){
+            case 0:
+                addNode();
+                break;
+            case 1:
+                if (nodeChgDivP.length>0){
+                    deleteNode();
+                    break;
+                }
+            case 2:
+                if (nodeChgDivP.length>0){
+                    insertNode();
+                    break;
+                }
+            case 3:
+                if (nodeChgDivP.length>0){
+                    replaceNode();
+                    break;
+                }
+            default:alert("NO vaild action was chosen!") ;
+        }
+
+        graf.options.length=0;
+        for (var i=0;i<nodeChgDivP.length;++i){
+            graf.options[i]=new Option(i+1);
+        }
+        return false;
+    }
+    function addNode(){
+        var txt=document.getElementById("txt").value;
+        var newText=document.createTextNode(txt);
+        var newNode=document.createElement("p");
+        newNode.appendChild(newText);
+        nodeChgDiv.appendChild(newNode);
+    }
+    function deleteNode(){
+        var selectedDelNum = graf.selectedIndex;
+        var nodeP=nodeChgDiv.getElementsByTagName("p");
+        nodeChgDiv.removeChild(nodeP[selectedDelNum]);
+    }
+    function insertNode(){
+        var selectedIx=graf.selectedIndex;
+        var txt=document.getElementById("txt").value;
+        var newText=document.createTextNode(txt);
+        var newNode=document.createElement("p");
+        newNode.appendChild(newText);
+        nodeChgDiv.insertBefore(newNode,nodeChgDivP[selectedIx]);
+    }
+    function replaceNode(){
+        var selectedR=graf.selectedIndex;
+        var txt=document.getElementById("txt").value;
+        var newText=document.createTextNode(txt);
+        var newNode=document.createElement("p");
+        newNode.appendChild(newText);
+        nodeChgDiv.replaceChild(newNode,nodeChgDivP[selectedR])
+    }
+</script>
+</html>
